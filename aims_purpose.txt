@@ -1,0 +1,22 @@
+## What are the aims and purpose of research?
+
+According to the [Data Policy Standardisation and Implementation group](https://www.rd-alliancare e.org/groups/data-policy-standardisation-and-implementation) of the Research Data Alliance, "the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies." This study investigates whether the most reputable Open Access journals have data policies that require authors to openly share the data underlying the published article. We build on the work of [@Castro_2017] whose study of open access journals reveals that only a small minority of these publications require that data and software asspciated with an article be made openly available. 
+
+Our hypothesis is that the most reputable open access journals -- those awarded the Directory of Open Access Journals (DOAJ) seal -- are more likely to require data sharing.  The DOAJ currently distinguishes (insert r code r nrows doaj_seal) journals that "achieve a high level of openness, adhere to Best Practice and high publishing standards."  
+
+
+
+
+
+## What are the aims and purpose of data management plan? Who is the target audience?
+
+- The members of the investigative team will utilize the DMP throughout the project to guide the handling of data and outputs 
+- Compliance with funder requirements to make outputs of funded research openly available worldwide
+
+
+## Glossary of terms
+
+- Creative Commons Licenses (include image)
+- Open Access: BOAI definition as a quote, cite BOAI
+- Data sharing policies 
+

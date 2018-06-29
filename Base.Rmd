@@ -1,0 +1,108 @@
+---
+title: "DOAJ Data Management Plan"
+author: "Principal Investigator: Gail Clement, Trieste Polytechnic Institute"
+date: "June 23, 2018"
+output: 
+    html_document:
+        number_sections: true
+        toc: true
+        toc_float: true
+        toc_depth: 2
+bibliography: oajournals.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction and context
+
+## Basic information
+
+**Title**: Do Reputable Open Access Journals Require Open Data Sharing?  
+**Summary**: This study analyzes the submission requirements of the most reputable open access journals to determine the extent to which they require data sharing as a condition of publication.  
+**Funding**: This research is being submitted to the J. Bohannon Foundation
+**Duration**: This one year project will be administered between `r as.Date("2018-09-01")` and `r as.Date("2018-09-01")+364`  
+
+## What are the aims and purpose of research?
+
+According to the [Data Policy Standardisation and Implementation group](https://www.rd-alliancare e.org/groups/data-policy-standardisation-and-implementation) of the Research Data Alliance, "the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies." This study investigates whether the most reputable Open Access journals have data policies that require authors to openly share the data underlying the published article. We build on the work of [@Castro_etal_2017] whose study of open access journals reveals that only a small minority of these publications require that data and software asspciated with an article be made openly available. 
+
+Our hypothesis is that the most reputable open access journals -- those awarded the Directory of Open Access Journals (DOAJ) seal -- are more likely to require data sharing.  The DOAJ currently distinguishes (insert r code r nrows doaj_seal) journals that "achieve a high level of openness, adhere to Best Practice and high publishing standards."  
+
+
+
+### Expected outputs of the project include:
+
+| Output # | Digital Output | Type  | Format/Duration/size | Planned access|
+|:------:|:-----|:---------|:------|:---------|
+|  1 | OA Journals analyzed  | raw dataset | CSV file, plain text format, 2.7 MB   | GitHub public repository, Zenodo public repository, DataCite API |
+| 2 | Dataset documentation | json metadata file | plain text file, .1 MB | Datacite API, Repository export |
+| 3 | Data Processing steps  | R scripts and explanation/commets | R Notebook file, 1 MB | GitHub public repository |
+| 4 | Data Visualizations  | R scripts and documentation; Plots | R Notebook file, 4 MB | GitHub public repository |
+| 5 | Published manuscript | Marked-up text file, code and plots; and rendered output per publisher requirements  | RMarkdown, 9 MB | Publisher website (open access); Preprint server |
+
+
+## What are the aims and purpose of data management plan? Who is the target audience?
+
+- The members of the investigative team will utilize the DMP throughout the project to guide the handling of data and outputs 
+- Compliance with funder requirements to make outputs of funded research openly available worldwide
+
+
+## Glossary of terms
+
+- Creative Commons Licenses (include image)
+- Open Access: BOAI definition as a quote, cite BOAI
+- Data sharing policies 
+
+
+# Legal, rights and ethical issues
+
+- All of the data re-used in this project is distributed under a xxx license allowing xyz, per the Legal Interop Guidelines 
+- Full attribution to reused third party data will be provided in all outputs per the Data Citation Principles of RDA
+- The Institutional Copyright Policy of the investigator's employer specifies that data and other deliverables from this project belong to the institution but may be distributed in an open access repository under a CC license with copyright retained by the Institution 
+- the funder requires that dissemination of all outputs be made under a CC-BY license allowing generous access, modification and reuse
+
+# Data collection and standards
+
+The  technical  infrastructure  for  the  project  will  make  use  of  free  and  /  or  open  source 
+software  where  possible.
+
+In order to ensure the widest possible use, the invstigators aim to disseminate the data, code, and textual narrative in plain text formats (Markdown files, R Scripts) to ensure wide reuse by humans and machines; cross-platform compatibility and portability; and fitness for preservation over time.
+
+ R is a xxxxxx
+
+The metadata prepared for xxxx
+
+No exceptional metadata/cataloguing difficulty is expected during the project. Analyzed datasets will be documented using the DataCite metadata schema and carefully version-controlled using Git and GitHub.
+
+# Short-term storage and data management
+
+During the active phase of the project, data will be stored on and backed up to the Research Data Storage Facility (RDSF) at Trieste Polytechnic Institute.
+The facility represents 2 million pounds of digital resilient storage, with ongoing capital investment. The RDSF 
+is overseen by a steering group of senior research and
+support staff, which includes the PVC Research. 
+Backup procedures are robust (overnight backup, copies held remotely on 
+tape) and secured access is in 
+place
+
+# Deposit and long-term preservation
+
+After the project conclusion, all research outputs will be made openly availalbe under a cc license in GitHub and in the xxx Repository. In addition to serving as a data storage facility for the duration of the project, ACRC will undertake to preserve each of the digital outputs mentioned above, 
+for three years beyond the end of the project
+on the Research Data Storage Facility, undertaking 
+refreshment of storage media as required
+.
+These materials will be available on request. Sustainability and open access are discussed below
+
+# Resourcing
+
+# Compliance and review
+
+# Agreement/ratification by stakeholders
+
+# Annexes
+
+Table displaying journals with the DOAJ seal with their attributes
+
+# References
