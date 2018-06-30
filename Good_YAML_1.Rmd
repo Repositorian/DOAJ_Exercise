@@ -1,0 +1,16 @@
+---
+title: "DOAJ Exercise"
+author: "Gail Clement"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  html_document:
+    code_folding: hide
+    fig_height: 4
+    theme: flatly
+    toc: yes
+    toc_float: yes
+  word_document:
+    toc: yes
+bibliography: oajournals.bib    
+---
+

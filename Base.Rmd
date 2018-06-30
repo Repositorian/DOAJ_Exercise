@@ -1,5 +1,5 @@
 ---
-title: "DOAJ Data Management Plan"
+title: "Data Management Plan"
 author: "Principal Investigator: Gail Clement, Trieste Polytechnic Institute"
 date: "June 23, 2018"
 output: 
@@ -8,7 +8,6 @@ output:
         toc: true
         toc_float: true
         toc_depth: 2
-bibliography: oajournals.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -26,13 +25,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## What are the aims and purpose of research?
 
-According to the [Data Policy Standardisation and Implementation group](https://www.rd-alliancare e.org/groups/data-policy-standardisation-and-implementation) of the Research Data Alliance, "the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies." This study investigates whether the most reputable Open Access journals have data policies that require authors to openly share the data underlying the published article. We build on the work of [@Castro_etal_2017] whose study of open access journals reveals that only a small minority of these publications require that data and software asspciated with an article be made openly available. 
+According to the [Data Policy Standardisation and Implementation group]
+(https://www.rd-alliance.org/groups/data-policy-standardisation-and-implementation) of the Research Data Alliance:
 
-Our hypothesis is that the most reputable open access journals -- those awarded the Directory of Open Access Journals (DOAJ) seal -- are more likely to require data sharing.  The DOAJ currently distinguishes (insert r code r nrows doaj_seal) journals that "achieve a high level of openness, adhere to Best Practice and high publishing standards."  
+>"the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies."
+
+This study investigates whether the most reputable Open Access journals have data policies that require authors to openly share the data underlying the published article. We build on the work of [Castro et al, 2017] whose study of randomly-selected open access journals revealed that a small minority require data and software associated with an article be made openly available. We have adapted their study design to consider only the most repubutable open access journals, as represented by those attaining the Seal of Approval from the D[irectory of Open Access Journals, DOJ](http://doaj.org). The DOAJ currently recognizes (insert r code r nrows doaj_seal) journals that "achieve a high level of openness, adhere to Best Practice and high publishing standards." 
 
 
-
-### Expected outputs of the project include:
+### Expected outputs of the project
 
 | Output # | Digital Output | Type  | Format/Duration/size | Planned access|
 |:------:|:-----|:---------|:------|:---------|
