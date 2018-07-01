@@ -10,8 +10,14 @@ output:
         toc_depth: 2
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo = FALSE}
+library(tidyverse)
+library(rmarkdown)
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r add_dataset, results="hide", echo = FALSE}
+doaj_seal<-read_csv('DOAJ_Seal.csv')
 ```
 
 # Introduction and context
