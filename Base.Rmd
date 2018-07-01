@@ -1,5 +1,5 @@
 ---
-title: "Data Management Plan"
+title: "My First Data Management Plan"
 author: "Principal Investigator: Gail Clement, Trieste Polytechnic Institute"
 date: "June 23, 2018"
 output: 
