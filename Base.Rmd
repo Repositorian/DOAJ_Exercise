@@ -1,23 +1,33 @@
 ---
-title: "My First Data Management Plan"
+title: "Data Management Plan"
 author: "Principal Investigator: Gail Clement, Trieste Polytechnic Institute"
-date: "June 23, 2018"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output: 
     html_document:
-        number_sections: true
         toc: true
-        toc_float: true
         toc_depth: 2
+        toc_float: true
+        number_sections: true
+        theme: journal
+        highlight: kate
+        css: custom.css
 ---
 
 ```{r setup, include=FALSE, echo = FALSE}
+
+# Load packages used in this exercise
 library(tidyverse)
 library(rmarkdown)
-knitr::opts_chunk$set(echo = TRUE)
+
+# Set global options for chunk options
+knitr::opts_chunk$set(include = FALSE, echo = TRUE)
 ```
 
-```{r add_dataset, results="hide", echo = FALSE}
-doaj_seal<-read_csv('DOAJ_Seal.csv')
+```{r add_dataset}
+# Add the dataset of DOAJ Seal journals
+
+doaj_seal <- read_csv('DOAJ_Seal.csv')
+
 ```
 
 # Introduction and context
@@ -26,29 +36,33 @@ doaj_seal<-read_csv('DOAJ_Seal.csv')
 
 **Title**: Do Reputable Open Access Journals Require Open Data Sharing?  
 **Summary**: This study analyzes the submission requirements of the most reputable open access journals to determine the extent to which they require data sharing as a condition of publication.  
-**Funding**: This research is being submitted to the J. Bohannon Foundation
+**Funding**: This research is being submitted to the J. Bohannon Foundation  
 **Duration**: This one year project will be administered between `r as.Date("2018-09-01")` and `r as.Date("2018-09-01")+364`  
 
 ## What are the aims and purpose of research?
 
-According to the [Data Policy Standardisation and Implementation group]
-(https://www.rd-alliance.org/groups/data-policy-standardisation-and-implementation) of the Research Data Alliance:
+According to the Research Data Alliance [Data Policy Standardisation and Implementation group](https://www.rd-alliance.org/groups/data-policy-standardisation-and-implementation):
 
 >"the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies."
 
-This study investigates whether the most reputable Open Access journals have data policies that require authors to openly share the data underlying the published article. We build on the work of [Castro et al, 2017] whose study of randomly-selected open access journals revealed that a small minority require data and software associated with an article be made openly available. We have adapted their study design to consider only the most repubutable open access journals, as represented by those attaining the Seal of Approval from the D[irectory of Open Access Journals, DOJ](http://doaj.org). The DOAJ currently recognizes (insert r code r nrows doaj_seal) journals that "achieve a high level of openness, adhere to Best Practice and high publishing standards." 
+This study investigates whether the most reputable Open Access journals require authors to openly share the data underlying the published article. We build on the work of [Castro et al, 2017] who studied randomly-selected open access journals to determine if they had data sharing policies. Their findings reveal that a small minority of open access journals require data and software associated with an article be made openly available. 
+
+In this proposed study, We will adapt the Castro et al. study design to investigate only the most repubutable open access journals. Specifically, we will analyze  journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org). The _**DOAJ Seal**_ currently recognizes **`r nrow(doaj_seal)` journals**. These open access journals are considered the most reputable because they: 
+
+>"achieve a high level of openness, adhere to Best Practice and high publishing standards." [^Footnote about DOAJ selection for Seal Approval goes here]
+
+![doaj_seal_logo.pmg](doaj_seal_logo.png)Journals awarded the **DOAJ Seal** appear in the online directory with this logo to note their special status 
+
 
 
 ### Expected outputs of the project
 
-| Output # | Digital Output | Type  | Format/Duration/size | Planned access|
-|:------:|:-----|:---------|:------|:---------|
-|  1 | OA Journals analyzed  | raw dataset | CSV file, plain text format, 2.7 MB   | GitHub public repository, Zenodo public repository, DataCite API |
-| 2 | Dataset documentation | json metadata file | plain text file, .1 MB | Datacite API, Repository export |
-| 3 | Data Processing steps  | R scripts and explanation/commets | R Notebook file, 1 MB | GitHub public repository |
-| 4 | Data Visualizations  | R scripts and documentation; Plots | R Notebook file, 4 MB | GitHub public repository |
-| 5 | Published manuscript | Marked-up text file, code and plots; and rendered output per publisher requirements  | RMarkdown, 9 MB | Publisher website (open access); Preprint server |
 
+```{r test-main, child = "knitr-child.Rmd"}
+
+```
+
+*****
 
 ## What are the aims and purpose of data management plan? Who is the target audience?
 
@@ -65,7 +79,9 @@ This study investigates whether the most reputable Open Access journals have dat
 
 # Legal, rights and ethical issues
 
-- All of the data re-used in this project is distributed under a xxx license allowing xyz, per the Legal Interop Guidelines 
+- The data provided by the Directory of Open Access Journals is distributed under a 
+
+re-used in this project is distributed under a xxx license allowing xyz, per the Legal Interop Guidelines 
 - Full attribution to reused third party data will be provided in all outputs per the Data Citation Principles of RDA
 - The Institutional Copyright Policy of the investigator's employer specifies that data and other deliverables from this project belong to the institution but may be distributed in an open access repository under a CC license with copyright retained by the Institution 
 - the funder requires that dissemination of all outputs be made under a CC-BY license allowing generous access, modification and reuse
@@ -110,6 +126,7 @@ These materials will be available on request. Sustainability and open access are
 
 # Annexes
 
-Table displaying journals with the DOAJ seal with their attributes
+##Principal Investigator's BioSketch
+insert child document with the ORCiD Script
 
 # References
