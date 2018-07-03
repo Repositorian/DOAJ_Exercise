@@ -8,7 +8,7 @@ output:
         toc_depth: 2
         toc_float: true
         number_sections: true
-        theme: journal
+        theme: readable
         highlight: kate
         css: custom.css
 ---
@@ -18,9 +18,11 @@ output:
 # Load packages used in this exercise
 library(tidyverse)
 library(rmarkdown)
+```
 
+```{r global_options, include=FALSE}
 # Set global options for chunk options
-knitr::opts_chunk$set(include = FALSE, echo = TRUE)
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE,message=FALSE, cache=FALSE)
 ```
 
 ```{r add_dataset}
@@ -49,10 +51,17 @@ This study investigates whether the most reputable Open Access journals require 
 
 In this proposed study, We will adapt the Castro et al. study design to investigate only the most repubutable open access journals. Specifically, we will analyze  journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org). The _**DOAJ Seal**_ currently recognizes **`r nrow(doaj_seal)` journals**. These open access journals are considered the most reputable because they: 
 
->"achieve a high level of openness, adhere to Best Practice and high publishing standards." [^Footnote about DOAJ selection for Seal Approval goes here]
+>"achieve a high level of openness, adhere to Best Practice and high publishing standards.The Seal is awarded to a journal that fulfills a set of criteria related to accessibility, openness, discoverability, reuse and author rights. It acts as a signal to readers and authors that the journal has generous use and reuse terms, author rights and adheres to the highest level of 'openness'. " ^[Footnote about DOAJ selection for Seal Approval goes here]
+
 
 ![doaj_seal_logo.pmg](doaj_seal_logo.png)Journals awarded the **DOAJ Seal** appear in the online directory with this logo to note their special status 
 
+To view a sample of this dataset, let's look at the first few rows in a table.
+
+```{r}
+knitr::kable(head(doaj_seal), 
+             caption = "Initial 6 rows of DOAJ Dataset")
+```
 
 
 ### Expected outputs of the project
@@ -64,10 +73,16 @@ In this proposed study, We will adapt the Castro et al. study design to investig
 
 *****
 
-## What are the aims and purpose of data management plan? Who is the target audience?
+## What are the aims and purpose of the Data Management Plan (DMP) ? Who is the target audience?
 
-- The members of the investigative team will utilize the DMP throughout the project to guide the handling of data and outputs 
-- Compliance with funder requirements to make outputs of funded research openly available worldwide
+- Research Project participants
+    + The DMP will guide the capture, handling, and storage of all project data and and other outputs during and after the active phase of the project.     
+    + It is an essential reference for all investigators involved in the project.
+- Curators and Preservationists 
+    + Library personnel responsible for the curation and long term preservation of project outputs after the active phase of the project will consult the DMP to understand standards to follow
+- The Funding Agency 
+    + The funders supporting this research will evaluate the DMP as an essential step in proposal review.  
+    + Should funding be awarded, the Agency will consult the DMP to determine what outputs to expect and monitor project progress
 
 
 ## Glossary of terms
@@ -126,7 +141,22 @@ These materials will be available on request. Sustainability and open access are
 
 # Annexes
 
-##Principal Investigator's BioSketch
-insert child document with the ORCiD Script
+## Principal Investigator's BioSketch
+
+
+```{r orcid-bio, echo= FALSE}
+library ('rorcid')
+library('httpuv')
+
+token <- orcid_auth(scope = "/authenticate", reauth = FALSE, redirect_uri = getOption("rorcid.redirect_uri"))
+
+res <- orcid_bio(orcid = "0000-0001-5494-4806")
+bio <- res$'0000-0001-5494-4806'$'content'
+
+
+```
+
+`r bio`
+
 
 # References
