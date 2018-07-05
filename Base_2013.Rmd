@@ -23,6 +23,7 @@ params:
     input: select
     label: 'Institution:'
     value: Trieste Polytechnic
+bibliography: oajournals.bib
 ---
 
 ```{r setup, include=FALSE, echo = FALSE}
@@ -73,7 +74,7 @@ According to the Research Data Alliance (RDA) [Data Policy Standardisation and I
 
 This study investigates whether the most reputable Open Access journals have **data sharing polices**. These policies require authors to openly disseminate the data and software underlying their published articles. 
 
-Our methodology builds on the work of [Castro et al, 2017] who studied randomly-selected open access journals to determine if they had data sharing policies. Their findings reveal that only a small minority of open access journals have data sharing policies. 
+Our methodology builds on the work of Castro et al [-@Castro_2017] who studied randomly-selected open access journals to determine if they had data sharing policies. Their findings reveal that only a small minority of open access journals have data sharing policies. These findings are consistent with those of other studies [see for example, @Vasilevsky_2017].
 
 In this study, we will investigate only the most reputable open access journals to see if they have data sharing policies. Specifically, we will analyze  journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will record whether or not their *Instructions to Authors* includes a data sharing requirement.
 
