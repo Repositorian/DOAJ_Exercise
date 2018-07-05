@@ -1,0 +1,6 @@
+params:
+  institution: "Trieste Polytechnic Institute"
+    label: "Institution"
+    value: Trieste Polytechnic Institute
+    input: select
+    choices: ["Trieste Polytechnic Institute", "University of the Aegean Sea", "International Centre for Theoretical Physics", "Elsevier"]
