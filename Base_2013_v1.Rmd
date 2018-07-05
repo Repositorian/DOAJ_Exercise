@@ -1,0 +1,101 @@
+---
+title: "Data Management Plan"
+author: "Principal Investigator - Gail Clement"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  html_document:
+    css: custom.css
+    fig_height: 2
+    fig_width: 2
+    highlight: kate
+    number_sections: yes
+    theme: readable
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+bibliography: oajournals.bib
+---
+
+```{r setup, include=FALSE, echo = FALSE}
+
+# Load packages used in this exercise
+library(tidyverse)
+library(rmarkdown)
+library(DT)
+```
+
+```{r global_options, include=FALSE}
+# Set global options for chunk options
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE,message=FALSE, cache=FALSE)
+```
+
+```{r add_dataset}
+# Add the dataset of DOAJ Seal journals
+
+doaj_seal <- read_csv('DOAJ_Seal.csv')
+
+```
+
+# Administrative Data
+
+## ID
+
+*Not Applicable*
+
+## Funder
+
+This research is being submitted for funding to the J. Bohannon Foundation 
+
+## Grant Reference Number
+
+*Not Applicable* (Proposal in preparation)
+
+## Project Name
+
+***Do Reputable Open Access Journals Require Open Data Sharing? *** 
+
+## Project Description
+
+This study analyzes the submission requirements of the most reputable open access journals to determine whther they require data sharing as a condition of publication. 
+
+According to the Research Data Alliance (RDA) [Data Policy Standardisation and Implementation group](https://www.rd-alliance.org/groups/data-policy-standardisation-and-implementation):
+
+>"the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of **data sharing policies**."
+
+This study investigates whether the most reputable Open Access journals have **data sharing polices**. These policies require authors to openly disseminate the data and software underlying their published articles. 
+
+Our methodology builds on the work of Castro et al [-@Castro_2017] who studied randomly-selected open access journals to determine if they had data sharing policies. Their findings reveal that only a small minority of open access journals have data sharing policies. These findings are consistent with those of other studies [see for example, @Vasilevsky_2017].
+
+In this study, we will investigate only the most reputable open access journals to see if they have data sharing policies. Specifically, we will analyze  journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will record whether or not their *Instructions to Authors* includes a data sharing requirement.
+
+![DOAJ Seal of Approval](images/doaj_seal_logo.png)
+
+**DOAJ Seal** journals are considered the most reputable because they: 
+
+>"achieve a high level of openness, adhere to Best Practice and high publishing standards.The Seal is awarded to a journal that fulfills a set of criteria related to accessibility, openness, discoverability, reuse and author rights. It acts as a signal to readers and authors that the journal has generous use and reuse terms, author rights and adheres to the highest level of 'openness'. " ^[Footnote about DOAJ selection for Seal Approval goes here]
+
+
+## Researcher
+
+Gail Clement, Principal Investigator, `r params$institution`
+
+## Researcher ID
+
+ORCID: 0000-0001-5494-4806
+
+## Date of First Version 
+
+## Date of Last Update
+
+`r format(Sys.Date(), '%B %d, %Y')`
+
+## Related Policies
+
+a. All original data, code, or reports produced as part of this project are owned by `r params$institution` per its institutional intellectual property policy.
+
+b. The J. Bohannan Foundation adheres to the open access and data sharing policies of the [Gates Foundation](https://www.gatesfoundation.org/How-We-Work/General-Information/Open-Access-Policy)
+
+*****
+
+
+# References

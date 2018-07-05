@@ -1,9 +1,0 @@
-### Expected outputs of the project include:
-
-| Output # | Digital Output | Type  | Format/Duration/size | Planned access|
-|:------:|:-----|:---------|:------|:---------|
-|  1 | OA Journals analyzed  | raw dataset | CSV file, plain text format, 2.7 MB   | GitHub public repository, Zenodo public repository, DataCite API |
-| 2 | Dataset documentation | json metadata file | plain text file, .1 MB | Datacite API, Repository export |
-| 3 | Data Processing steps  | R scripts and explanation/commets | R Notebook file, 1 MB | GitHub public repository |
-| 4 | Data Visualizations  | R scripts and documentation; Plots | R Notebook file, 4 MB | GitHub public repository |
-| 5 | Published manuscript | Marked-up text file, code and plots; and rendered output per publisher requirements  | RMarkdown, 9 MB | Publisher website (open access); Preprint server |
