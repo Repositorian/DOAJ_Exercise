@@ -1,6 +1,6 @@
 ---
 title: "Data Management Plan"
-author: "Principal Investigator - Gail Clement"
+author: "Principal Investigator - Gail Clement, `r params$institution`"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output: 
     html_document:
@@ -11,6 +11,12 @@ output:
         theme: readable
         highlight: kate
         css: custom.css
+params:
+  institution: 
+    label: "Institution:"
+    value: Trieste Polytechnic
+    input: select
+    choices: ["International Centre for Theoretical Physics", "Trieste Polytechnic Institute", "CODATA-RDA Summer School", "Elsevier Inc"]        
 ---
 
 ```{r setup, include=FALSE, echo = FALSE}
@@ -71,7 +77,7 @@ In this study, We will investigate only the most reputable open access journals 
 
 ## Researcher
 
-Gail Clement, Principal Investigator
+Gail Clement, Principal Investigator, `r params$institution`
 
 ## Researcher ID
 
@@ -85,7 +91,7 @@ ORCID: 0000-0001-5494-4806
 
 ## Related Policies
 
-a. Ownership of any original data, code, or reports produced as part of this project are owned by Trieste Polytechnical Institution per their institutial research data policy.
+a. Ownership of any original data, code, or reports produced as part of this project are owned by `r params$institution` per their institutional intellectual property policy.
 
 b. The J. Bohannan Foundation adheres to the open access and data sharing policies of the [Gates Foundation](https://www.gatesfoundation.org/How-We-Work/General-Information/Open-Access-Policy)
 
@@ -95,9 +101,9 @@ b. The J. Bohannan Foundation adheres to the open access and data sharing polici
 
 ## Existing Data Being Reused
 
-This study relies on the [DOAJ Journal Metadata] available as a `csv` file download from the [DOAJ website](https://doaj.org/faq#metadata). The `csv` file is updated every 30 minutes.
+This study relies on the _DOAJ Journal Metadata_ available as a `csv` file download from the [DOAJ website](https://doaj.org/faq#metadata). The `csv` file is updated every 30 minutes.
 
-This data will be read into the open source tool `OpenRefine` to filter it for those journals awarded the DOAJ Seal, and to remove unneeded columns containing the web addresses for journal policies around plagiarism, submission fees, and other url's not related to this study.
+This data will be read into the open source tool [`OpenRefine`](openrefine.org) to filter it for those journals awarded the DOAJ Seal, and to remove unneeded columns containing the web addresses for journal policies around plagiarism, submission fees, and other urls not related to this study.
 
 The filtered version of the dataset will be exported as a new file named `doaj_seal.csv` for importing into analytical software.
 
@@ -131,7 +137,7 @@ The final outputs from the project will be documented in metadata files accordin
 
 # Ethics and Legal Compliance
 
-* No additional ethical or privacy issues arise in this study because both the DOAJ data, and the information about data policies for any published journal, are publicly posted online.
+* No additional ethical or privacy issues arise in this study because both the _DOAJ data_, and the information about data policies for any published journal, are publicly posted online.
 
 * The data provided about journals awarded the *Directory of Open Access Journals* Seal of Approval is distributed under a CC BY-SA license. This license requires that reusers of the data share their derivative dataset under the same license. Therefore, the output of this research will be disseminated under the CC BY-SA license. This license adheres to the *Principles and Guidelines of the Research Data Alliance Legal Interoperability Group*, which recommends the use of Creative Commons Attribution licenses to allow the broadest sharing of data while guaranteeing attiution to the data provider.^[https://www.rd-alliance.org/rda-codata-legal-interoperability-research-data-principles-and-implementation-guidelines-now]
 
@@ -152,26 +158,26 @@ All files associated with the project will be maintained under the `Git` version
 
 # Storage and Backup
 
-During the active phase of the project data will be stored on and backed up to the Research Data Storage Facility (RDSF) at Trieste Polytechnic Institute. The facility represents 2 million pounds of digital resilient storage, with ongoing capital investment. The RDSF is overseen by a steering group of senior research and support staff, which includes the PVC Research. Backup procedures are robust (overnight backup, copies held remotely on tape) and secured access is in place
+During the active phase of the project data will be stored on and backed up to the Research Data Storage Facility (RDSF) at `r params$institution`. This facility represents 2 million pounds of digital resilient storage, with ongoing capital investment. The RDSF is overseen by a steering group of senior research and support staff, which includes the PVC Research. Backup procedures are robust (overnight backup, copies held remotely on tape) and secured access is in place
 
 # Deposit and long-term preservation
 
 After the project conclusion, all research outputs will be assigned Digital Object Identifiers by DataCite to serve as persistent identifiers and to always resolve to the landing page for the project files (metadata, data, code, and reports). 
 
 
-
-Additionally, the Research Data Storage Facility (RDSF) at Trieste Polytechnic Institute will undertake to preserve each of the digital outputs mentioned above, 
-for three years beyond the end of the project. Refreshment of storage media will be scheduled as required
+Additionally, the Research Data Storage Facility (RDSF) at `r params$institution` will undertake to preserve each of the digital outputs mentioned above, for three years beyond the end of the project. Refreshment of storage media will be scheduled as required
 
 ****
 
 # Selection and Preservation
 
+The final complete dataset `doaj_seal_enhanced` and all pulbished outputs produced based on this dataset will be issued Digital Object Identifiers and stored on `GitHub` and `Zenodo`.  All draft versions of project outputs will also be publicly available in GitHub with unique hashes distinguishing each version that predates the final.
+
 ****
 
 # Data Sharing
 
-The data and metadata will be made openly accessible under a CC-BY SA license in the CERN-maintained open access repository `Zenodo`, an open dependable home for the long-tail of science, enabling researchers to share and preserve any research outputs in any size, any format and from any science. ^[]
+The data and metadata will be made openly accessible under a CC-BY SA license in the CERN-maintained open access repository `Zenodo`, an open dependable home for the long-tail of science, enabling researchers to share and preserve any research outputs in any size, any format and from any science. ^[Zenodo policies are available online at http://about.zenodo.org/policies/]
 
 *****
 # Responsibilities and Resources
