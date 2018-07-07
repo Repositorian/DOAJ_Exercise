@@ -1,6 +1,9 @@
 ---
 title: "Data Management Plan"
-author: "Principal Investigator - Gail Clement, `r params$institution`"
+author: 
+    - "Principal Investigator - Gail Clement, `r params$institution`"
+    - "Co-Investigator - Thomas Morell, Caltech"
+    - "Key Personnel - Donna Wrubelwski, Robert Doiel, Caltech"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output:
   html_document:
@@ -13,6 +16,9 @@ output:
     toc: yes
     toc_depth: 2
     toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
 params:
   institution:
     choices:
@@ -23,7 +29,9 @@ params:
     input: select
     label: 'Institution:'
     value: Trieste Polytechnic
-bibliography: oajournals.bib
+bibliography: 
+    - oajournals.bib
+    - packages.bib
 ---
 
 ```{r setup, include=FALSE, echo = FALSE}
@@ -66,23 +74,32 @@ This research is being submitted for funding to the J. Bohannon Foundation
 
 ## Project Description
 
-This study analyzes the submission requirements of the most reputable open access journals to determine whether they require data sharing as a condition of publication. 
+This study analyzes the submission requirements of the most reputable open access journals to determine the prevalence and characteristics of data sharing policies. This question is an important one for 21^st^ century authors and readers because open data sharing is seen as a key component of open and more trusted scientific record.
 
 According to the Research Data Alliance (RDA) [Data Policy Standardisation and Implementation group](https://www.rd-alliance.org/groups/data-policy-standardisation-and-implementation):
 
 >"the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of **data sharing policies**."
 
-This study investigates whether the most reputable Open Access journals have **data sharing polices**. These policies require authors to openly disseminate the data and software underlying their published articles. 
+This study investigates whether the **most reputable Open Access journals** have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles. 
+Our investigation builds on the recent work of Castro et al [-@Castro_2017] who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, @Vasilevsky_2017] -- may be skewed because of the authors' rules of includsion and exclusion ^[in particular, the choice to include open access journals merely because of their use of Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals; and the ].
 
-Our methodology builds on the work of Castro et al [-@Castro_2017] who studied randomly-selected open access journals to determine if they had data sharing policies. Their findings reveal that only a small minority of open access journals have data sharing policies. These findings are consistent with those of other studies [see for example, @Vasilevsky_2017].
-
-In this study, we will investigate only the most reputable open access journals to see if they have data sharing policies. Specifically, we will analyze  journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will record whether or not their *Instructions to Authors* includes a data sharing requirement.
+In this study, we will includeonly the most reputable open access journals in our assessment  of journal sharing policies. We will, also ainclude journals regardless of language. Specifically, we will analyze  journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will apply the same coding framework devised by Castro et al (2017) to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardles of language, will yield a more accurate and reproducible set of findings than those published from  Castro et al (2017).
 
 ![DOAJ Seal of Approval](images/doaj_seal_logo.png)
 
 **DOAJ Seal** journals are considered the most reputable because they: 
 
 >"achieve a high level of openness, adhere to Best Practice and high publishing standards.The Seal is awarded to a journal that fulfills a set of criteria related to accessibility, openness, discoverability, reuse and author rights. It acts as a signal to readers and authors that the journal has generous use and reuse terms, author rights and adheres to the highest level of 'openness'. " ^[Footnote about DOAJ selection for Seal Approval goes here]
+
+Moreoever, the DOAJ Seal journals do include over 200 non-English journals that merit analysis in this study.
+Finally, our research group has determined that following is true when it comes to reputable open access journals
+
+Math problems? Call 1-800-[(10x)(13i)^2]-[sin(xy)/2.362x].
+If `$\displaystyle\lim_{x\rightarrow8}\frac{1}{x{-}8}=\infty$`
+then `$\displaystyle\lim_{x\rightarrow5}\frac{1}{x{-}5}=\rotatebox{90}{5}$`
+
+
+
 
 
 ## Researcher
@@ -127,7 +144,24 @@ knitr::kable(head(doaj_seal, 4))
 
 ## Data being collected
 
-The `doaj_seal.csv` data set will be copied and enhanced with an additional column for 'Data Policy' which will be filled in during this investigation. The resulting data set will be named `doaj_seal_enhanced.csv`.
+The `doaj_seal.csv` data set will be copied and enhanced with additional columns, reulsting in the processed dataset, `doaj_seal_enhanced.csv`. The following columns will be added to `doaj_seal.csv`, in conformance with the Coding Framework of Castro et al (2017)
+
+- 'Data Policy'  (Boolean)
+    + Yes | No
+- 'Data Sharing Policy' (Factor)
+    + No mention 
+    + Implied
+    + Mentioned
+    + Explicitly encouraged
+    + Required, but not explictly tied to editorial decisions
+    + Required as a condition of publication
+'Data Citation Policy' (Factor)
+    + No mention 
+    + Implied
+    + Explicitly encouraged
+        
+    
+
 
 Investigators will examine the websites of each journal listed in the `doaj_seal_enhanced.csv` file to determine if a data sharing policy is included in the Instructions to Authors. If no policy is found, the 'Data Policy' column will be marked as 'False'. If a data policy is found, the column will be marked 'True'
 
@@ -158,9 +192,9 @@ The final outputs from the project will be documented in metadata files accordin
 
 All data retrieved for the DOAJ Seal of Approval are downloaded and stored in the open `common separated value` (`csv`) file format.
 
-All data about data policies culled from the web sites of will also be saved and stored in `csv` file format.
+All data policies culled from the web sites of the DOAJ seal journals will be saved as `.txt` files. The data generated by applying Castro et al's [-@Castro_2017] Coding Framework will be stored in `csv` file format.
 
-Analysis, visualization, and summarization of the study's findings will be performed in the open source software `R` and `RStudio` using the `tidyverse` package. Reports produced from the study will be also be created in `RStudio` using the open source text format `Rmarkdown` and output to `HTML` documents, slides, and `MS Word` documents for submission to funders or publishers. 
+Analysis, visualization, and summarization of the study's findings will be performed in the open source software `R` and `RStudio` using the `tidyverse` package [@R-tidyverse]. Reports produced from the study will be also be created in `RStudio` using the open source text format `Rmarkdown` and output to `HTML` documents, slides, and `MS Word` documents for submission to funders or publishers. 
 
 All files associated with the project will be maintained under the `Git` version control system and made openly available for download from the Principal Investigator's `GitHub` repository.
 
